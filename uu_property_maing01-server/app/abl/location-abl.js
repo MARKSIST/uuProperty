@@ -19,7 +19,10 @@ class LocationAbl {
 
   async update(awid, dtoIn) {}
 
-  async list(awid, dtoIn) {}
+  async list(awid) {
+    let dtoOut = this.dao.list({ awid });
+    return dtoOut;
+  }
 
   async delete(awid, dtoIn) {}
 
