@@ -35,7 +35,13 @@ const Update = {
   UC_CODE: `${LOCATION_ERROR_PREFIX}update/`,
 };
 
+const Get = {
+  UC_CODE: `${LOCATION_ERROR_PREFIX}get/`,
+  
+};
+
 module.exports = {
+  Get,
   Update,
   List,
   Delete,

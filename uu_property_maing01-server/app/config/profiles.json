@@ -32,6 +32,10 @@
       "location/update": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
+      },
+      "location/get": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
       }
     }
   }
