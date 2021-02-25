@@ -20,6 +20,11 @@
         "realization": "api/controllers/LocationController.create",
         "httpMethod": "POST",
         "type": "CMD"
+      },
+      "location/delete": {
+        "realization": "api/controllers/LocationController.delete",
+        "httpMethod": "POST",
+        "type": "CMD"
       }
     }
   }

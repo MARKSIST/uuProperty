@@ -8,6 +8,12 @@ const Create = {
   
 };
 
+const Delete = {
+  UC_CODE: `${LOCATION_ERROR_PREFIX}delete/`,
+  
+};
+
 module.exports = {
+  Delete,
   Create
 };

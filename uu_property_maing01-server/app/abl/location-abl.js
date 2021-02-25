@@ -16,6 +16,10 @@ class LocationAbl {
     this.dao = DaoFactory.getDao("location");
   }
 
+  async delete(awid, dtoIn) {
+    
+  }
+
   async create(awid, dtoIn) {
     
   }
