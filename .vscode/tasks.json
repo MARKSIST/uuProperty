@@ -4,7 +4,7 @@
     {
       "label": "eslint-hi",
       "type": "shell",
-      "command": "./node_modules/.bin/eslint",
+      "command": "${workspaceFolder}/uu_property_maing01-hi/node_modules/.bin/eslint",
       "options": { "cwd": "${workspaceFolder}/uu_property_maing01-hi" },
       "args": ["./src", "./test", "./mock"],
       "problemMatcher": "$eslint-stylish"
@@ -12,9 +12,9 @@
     {
       "label": "eslint-server",
       "type": "shell",
-      "command": "./node_modules/.bin/eslint",
+      "command": "${workspaceFolder}/uu_property_maing01-server/node_modules/.bin/eslint",
+      "args": ["./app"],
       "options": { "cwd": "${workspaceFolder}/uu_property_maing01-server" },
-      "args": ["./app", "./test", "./app.js"],
       "problemMatcher": "$eslint-stylish"
     },
     {
