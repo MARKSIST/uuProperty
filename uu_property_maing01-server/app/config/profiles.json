@@ -24,6 +24,10 @@
       "location/delete": {
         "sysStateList": ["active"],
         "profileList": ["Public"]
+      },
+      "location/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Public"]
       }
     }
   }
