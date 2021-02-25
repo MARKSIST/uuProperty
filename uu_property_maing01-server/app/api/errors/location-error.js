@@ -37,7 +37,22 @@ const Update = {
 
 const Get = {
   UC_CODE: `${LOCATION_ERROR_PREFIX}get/`,
-  
+
+  InvalidDtoIn: class extends PropertyMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Get.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+
+  LocationDaoGetFailed: class extends PropertyMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Get.UC_CODE}locationDaoGetFailed`;
+      this.message = "Get location by Dao get failed.";
+    }
+  },
 };
 
 module.exports = {

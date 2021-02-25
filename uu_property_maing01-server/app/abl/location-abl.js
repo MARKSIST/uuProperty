@@ -9,6 +9,9 @@ const WARNINGS = {
   createUnsupportedKeys: {
     code: `${Errors.Create.UC_CODE}unsupportedKeys`,
   },
+  getUnsupportedKeys: {
+    code: `${Errors.Get.UC_CODE}unsupportedKeys`,
+  },
 };
 
 class LocationAbl {
@@ -18,7 +21,19 @@ class LocationAbl {
   }
 
   async get(awid, dtoIn) {
-    
+    let validationResult = this.validator.validate("locationGetDtoInType", dtoIn);
+
+    // HDS 1.2, 1.3 // A1, A2
+    let uuAppErrorMap = ValidationHelper.processValidationResult(
+      dtoIn,
+      validationResult,
+      WARNINGS.getUnsupportedKeys.code,
+      Errors.Get.InvalidDtoIn
+    );
+
+    let dtoOut = await this.dao.get({ awid, id: dtoIn.locationId });
+
+    return { dtoOut, uuAppErrorMap };
   }
 
   async update(awid, dtoIn) {}
