@@ -6,6 +6,9 @@
       "schemaMap": {
         "propertyMain": {
           "realization": "dao/PropertyMainMongo"
+        },
+        "location": {
+          "realization": "dao/LocationMongo"
         }
       }
     }
