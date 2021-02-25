@@ -18,7 +18,13 @@ const List = {
   
 };
 
+const Update = {
+  UC_CODE: `${LOCATION_ERROR_PREFIX}update/`,
+  
+};
+
 module.exports = {
+  Update,
   List,
   Delete,
   Create
