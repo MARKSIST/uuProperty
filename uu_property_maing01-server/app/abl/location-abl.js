@@ -12,6 +12,9 @@ const WARNINGS = {
   getUnsupportedKeys: {
     code: `${Errors.Get.UC_CODE}unsupportedKeys`,
   },
+  deleteUnsupportedKeys: {
+    code: `${Errors.Delete.UC_CODE}unsupportedKeys`,
+  },
 };
 
 class LocationAbl {
@@ -43,7 +46,25 @@ class LocationAbl {
     return dtoOut;
   }
 
-  async delete(awid, dtoIn) {}
+  async delete(awid, dtoIn) {
+    let validationResult = this.validator.validate("locationDeleteDtoInType", dtoIn);
+
+    // HDS 1.2, 1.3 // A1, A2
+    let uuAppErrorMap = ValidationHelper.processValidationResult(
+      dtoIn,
+      validationResult,
+      WARNINGS.deleteUnsupportedKeys.code,
+      Errors.Delete.InvalidDtoIn
+    );
+
+    this.dao.delete({ awid, id: dtoIn.locationId });
+
+    let dtoOut = {
+      text: `Location id - ${dtoIn.locationId} deleted`,
+    };
+
+    return { dtoOut, uuAppErrorMap };
+  }
 
   async create(awid, dtoIn) {
     let validationResult = this.validator.validate("locationCreateDtoInType", dtoIn);

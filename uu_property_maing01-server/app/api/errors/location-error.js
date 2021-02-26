@@ -25,6 +25,21 @@ const Create = {
 
 const Delete = {
   UC_CODE: `${LOCATION_ERROR_PREFIX}delete/`,
+  InvalidDtoIn: class extends PropertyMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Delete.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+
+  LocationDaoDeleteFailed: class extends PropertyMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Delete.UC_CODE}locationDaoDeleteFailed`;
+      this.message = "Delete location by Dao delete failed.";
+    }
+  },
 };
 
 const List = {

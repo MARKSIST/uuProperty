@@ -6,3 +6,7 @@ const locationCreateDtoInType = shape({
 const locationGetDtoInType = shape({
   locationId: id().isRequired(),
 });
+
+const locationDeleteDtoInType = shape({
+  locationId: id().isRequired(),
+});

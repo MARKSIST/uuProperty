@@ -17,6 +17,10 @@ class LocationMongo extends UuObjectDao {
   async get({ awid, id }) {
     return await super.find({ awid, id });
   }
+
+  async delete({ awid, id }) {
+    return await super.deleteOne({ awid, id });
+  }
 }
 
 module.exports = LocationMongo;
